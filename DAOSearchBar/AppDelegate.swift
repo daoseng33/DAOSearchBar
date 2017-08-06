@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DAOSearchBar
 //
-//  Created by Ray on 2017/8/6.
+//  Created by daoseng on 2017/8/6.
 //  Copyright © 2017年 Ray. All rights reserved.
 //
 
