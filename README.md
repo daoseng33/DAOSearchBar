@@ -14,6 +14,13 @@ So, heres the DAOSearchBar.
 
 2. Now you can custom the search bar background and the magnifier icon color.
 
+## Requirement ##
+- iOS 9.0
+
+- Swift 3.0
+
+- XCode 8
+
 ## Installation ##
 ### CocoaPods ###
 ```
