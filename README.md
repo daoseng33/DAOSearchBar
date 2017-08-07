@@ -26,7 +26,7 @@ self.searchBarWithoutDelegate.frame = CGRect(x: 20.0, y: 40.0, width: self.view.
 self.view.addSubview(self.searchBarWithoutDelegate)
 ```
 
-### Searcg bar with delegate ###
+### Search bar with delegate ###
 ```swift
 class ViewController: UIViewController, INSSearchBarDelegate {}
 ```
