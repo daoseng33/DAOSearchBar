@@ -53,8 +53,9 @@ class ViewController: UIViewController, INSSearchBarDelegate
         self.searchBarWithCustomColor.frame = CGRect(x: 20.0, y: 240.0, width: self.view.bounds.width - 40.0, height: 34.0)
         self.searchBarWithCustomColor.searchOffColor = UIColor.darkGray
         self.searchBarWithCustomColor.searchOnColor = UIColor.white
-        self.searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
         self.searchBarWithCustomColor.searchBarOffColor = UIColor.white
+        self.searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
+        
         
         self.view.addSubview(self.searchBarWithCustomColor)
     }
