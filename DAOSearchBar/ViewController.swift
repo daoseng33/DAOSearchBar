@@ -12,6 +12,7 @@ class ViewController: UIViewController, INSSearchBarDelegate
 {
     let searchBarWithoutDelegate: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
     let searchBarWithDelegate: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
+    let searchBarWithCustomColor: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
     
     override func viewDidLoad()
     {
@@ -42,6 +43,20 @@ class ViewController: UIViewController, INSSearchBarDelegate
         self.searchBarWithDelegate.delegate = self;
         
         self.view.addSubview(self.searchBarWithDelegate)
+        
+        let descriptionLabel3: UILabel = UILabel(frame: CGRect(x: 20.0, y: 220.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
+        descriptionLabel3.textColor = UIColor.white
+        descriptionLabel3.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
+        descriptionLabel3.text = "Custom color"
+        self.view.addSubview(descriptionLabel3)
+        
+        self.searchBarWithCustomColor.frame = CGRect(x: 20.0, y: 240.0, width: self.view.bounds.width - 40.0, height: 34.0)
+        self.searchBarWithCustomColor.searchOffColor = UIColor.darkGray
+        self.searchBarWithCustomColor.searchOnColor = UIColor.white
+        self.searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
+        self.searchBarWithCustomColor.searchBarOffColor = UIColor.white
+        
+        self.view.addSubview(self.searchBarWithCustomColor)
     }
     
     override func didReceiveMemoryWarning()

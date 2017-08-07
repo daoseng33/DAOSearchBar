@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "NavBarIconSearchCircle_black.png",
+      "filename" : "NavBarIconSearchBar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "NavBarIconSearchCircle_black@2x.png",
+      "filename" : "NavBarIconSearchBar@2x.png",
       "scale" : "2x"
     },
     {

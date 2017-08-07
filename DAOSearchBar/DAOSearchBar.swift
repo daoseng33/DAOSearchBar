@@ -169,6 +169,39 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
      */
     var originalFrame: CGRect
     
+    /// The color of the icon image when search bar is not show
+    public var searchOffColor = UIColor.white {
+        didSet {
+            self.searchImageViewOff.tintColor = self.searchOffColor
+        }
+    }
+    
+    /// the color of the icon images and the text field text when search bar is show
+    public var searchOnColor = UIColor.black {
+        didSet {
+            self.searchImageViewOn.tintColor = self.searchOnColor
+            self.searchImageCrossLeft.tintColor = self.searchOnColor
+            self.searchImageCrossRight.tintColor = self.searchOnColor
+            self.searchImageCircle.tintColor = self.searchOnColor
+            self.searchField.textColor = self.searchOnColor
+        }
+    }
+    
+    /// The color of the search bar background when search bar is not show
+    public var searchBarOffColor = UIColor.clear {
+        didSet {
+            self.searchFrame.layer.backgroundColor = self.searchBarOffColor.cgColor
+        }
+    }
+    
+    /// The color of the search bar background when search bar is show
+    public var searchBarOnColor = UIColor.white {
+        didSet {
+            self.searchFrame.layer.backgroundColor = self.searchBarOnColor.cgColor
+        }
+    }
+    
+    // MARK: init
     override init(frame: CGRect)
     {
         self.searchFrame = UIView(frame: CGRect.zero)
@@ -192,7 +225,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         self.searchFrame.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.searchFrame.layer.masksToBounds = true
         self.searchFrame.layer.cornerRadius = self.bounds.height / 2
-        self.searchFrame.layer.borderWidth = 0.5
+        self.searchFrame.layer.borderWidth = 1.0
         self.searchFrame.layer.borderColor = UIColor.clear.cgColor
         self.searchFrame.contentMode = UIViewContentMode.redraw
         
@@ -202,7 +235,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         self.searchField.borderStyle = UITextBorderStyle.none
         self.searchField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.searchField.font = UIFont(name:"AvenirNext-Regular", size:16.0)
-        self.searchField.textColor = UIColor(red: 17.0/255.0, green: 190.0/255.0, blue: 227.0/255.0, alpha: 1.0)
+        self.searchField.textColor = self.searchOnColor
         self.searchField.alpha = 0.0
         self.searchField.delegate = self
         
@@ -215,32 +248,37 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         self.searchImageViewOn.frame = searchImageViewOnContainerView.bounds
         self.searchImageViewOn.alpha = 0.0
-        self.searchImageViewOn.image = UIImage(named: "NavBarIconSearch_black")
+        self.searchImageViewOn.image = UIImage(named: "NavBarIconSearch")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageViewOn.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageViewOn)
         
         self.searchImageCircle.frame = CGRect(x: 0.0, y: 0.0, width: 18.0, height: 18.0)
         self.searchImageCircle.alpha = 0.0
-        self.searchImageCircle.image = UIImage(named: "NavBarIconSearchCircle_black")
+        self.searchImageCircle.image = UIImage(named: "NavBarIconSearchCircle")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCircle.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCircle)
         
         self.searchImageCrossLeft.frame = CGRect(x: 14.0, y: 14.0, width: 8.0, height: 8.0)
         self.searchImageCrossLeft.alpha = 0.0
-        self.searchImageCrossLeft.image = UIImage(named: "NavBarIconSearchBar_black")
+        self.searchImageCrossLeft.image = UIImage(named: "NavBarIconSearchBar")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCrossLeft.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCrossLeft)
         
         self.searchImageCrossRight.frame = CGRect(x: 7.0, y: 7.0, width: 8.0, height: 8.0)
         self.searchImageCrossRight.alpha = 0.0
-        self.searchImageCrossRight.image = UIImage(named: "NavBarIconSearchBar2_black")
+        self.searchImageCrossRight.image = UIImage(named: "NavBarIconSearchBar2")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCrossRight.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCrossRight)
         
         self.searchImageViewOff.frame = CGRect(x: self.bounds.width - kINSSearchBarInset - kINSSearchBarImageSize, y: (self.bounds.height - kINSSearchBarImageSize) / 2, width: kINSSearchBarImageSize, height: kINSSearchBarImageSize)
         self.searchImageViewOff.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin, .flexibleBottomMargin]
         self.searchImageViewOff.alpha = 1.0
-        self.searchImageViewOff.image = UIImage(named: "NavBarIconSearch_white")
+        self.searchImageViewOff.image = UIImage(named: "NavBarIconSearch")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageViewOff.tintColor = self.searchOffColor
         
         self.searchFrame.addSubview(self.searchImageViewOff)
         
@@ -270,6 +308,8 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
     }
     
+    // MARK: animation
+    
     func changeStateIfPossible(_ gestureRecognizer: UITapGestureRecognizer)
     {
         switch self.state
@@ -290,18 +330,6 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         default:
             
             break
-        }
-    }
-    
-    func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer)
-    {
-        if (self.searchField.isFirstResponder)
-        {
-            self.window?.endEditing(true)
-            if (self.state == INSSearchBarState.searchBarVisible && self.searchField.text!.characters.count == 0)
-            {
-                self.hideSearchBar(nil)
-            }
         }
     }
     
@@ -333,7 +361,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                 
                 UIView.animate(withDuration: kINSSearchBarAnimationStepDuration * 2, animations: {
                     
-                    self.searchFrame.layer.backgroundColor = UIColor.white.cgColor
+                    self.searchFrame.layer.backgroundColor = self.searchBarOnColor.cgColor
                     self.searchImageViewOff.alpha = 0.0
                     self.searchImageViewOn.alpha = 1.0
                     self.searchField.alpha = 1.0
@@ -373,7 +401,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                     self.frame = self.originalFrame
                 }
                 
-                self.searchFrame.layer.backgroundColor = UIColor.clear.cgColor
+                self.searchFrame.layer.backgroundColor = self.searchBarOffColor.cgColor
                 self.searchImageViewOff.alpha = 1.0
                 self.searchImageViewOn.alpha = 0.0
                 self.searchField.alpha = 0.0
@@ -402,6 +430,8 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
             })
         }
     }
+    
+    // MARK: text filed
     
     func textDidChange(_ notification: Notification?)
     {
@@ -484,6 +514,8 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         return retVal
     }
     
+    // MARK: keyboard
+    
     func keyboardWillShow(_ notification: Notification?)
     {
         if self.searchField.isFirstResponder
@@ -499,6 +531,20 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
             self.window?.rootViewController?.view.addGestureRecognizer(self.keyboardDismissGestureRecognizer)
         }
     }
+    
+    func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer)
+    {
+        if (self.searchField.isFirstResponder)
+        {
+            self.window?.endEditing(true)
+            if (self.state == INSSearchBarState.searchBarVisible && self.searchField.text!.characters.count == 0)
+            {
+                self.hideSearchBar(nil)
+            }
+        }
+    }
+    
+    // MARK: gesture
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
     {
