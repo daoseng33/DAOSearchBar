@@ -1,11 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "DAOSearchBar"
   s.version      = "1.0.1"
-  s.summary      = "DAOSearchBar is based on INSSearchBar: https://github.com/berlininsomniac/INSSearchBar_Swift
-
-It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like INSSearchBar is no longer update anymore.
-
-So, heres the DAOSearchBar."
+  s.summary      = "A search bar with beautiful animation.
   s.homepage     = "https://github.com/daoseng33/DAOSearchBar"
   s.screenshots  = "https://media.giphy.com/media/3o6vXWksaIn9OFF78I/giphy.gif"
   s.license      = "WTFPL"
