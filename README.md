@@ -10,7 +10,8 @@ So, heres the DAOSearchBar.
 ![customColor](https://media.giphy.com/media/EGECl0ncJTUME/giphy.gif)
 
 ### What's new in version 1.0.1 ###
-Now you can custom the search bar background and the magnifier icon color!
+1.Swift 3.0 supported.
+2.Now you can custom the search bar background and the magnifier icon color.
 
 ## Installation ##
 ### CocoaPods ###
@@ -76,4 +77,3 @@ func destinationFrameForSearchBar(_ searchBar: INSSearchBar) -> CGRect
         // Access the text from the search bar like searchBar.searchField.text
     }
  ```
- 
