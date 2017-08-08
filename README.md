@@ -24,7 +24,7 @@ So, heres the DAOSearchBar.
 ## Installation ##
 ### CocoaPods ###
 ```
-pod 'DAOSearchBar', '~> 1.0.1'
+pod 'DAOSearchBar', '~> 1.0.2'
 ```
 ## Usage ##
 ### Search bar without delegate ###

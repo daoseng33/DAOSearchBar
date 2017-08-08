@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DAOSearchBar"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "A search bar with beautiful animation."
   s.homepage     = "https://github.com/daoseng33/DAOSearchBar"
   s.screenshots  = "https://media.giphy.com/media/3o6vXWksaIn9OFF78I/giphy.gif"
