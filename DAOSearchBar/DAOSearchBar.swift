@@ -190,16 +190,14 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     /// The color of the search bar background when search bar is not show
     public var searchBarOffColor = UIColor.clear {
         didSet {
-            self.searchFrame.layer.backgroundColor = self.searchBarOffColor.cgColor
+            if self.state == .normal {
+                self.searchFrame.layer.backgroundColor = self.searchBarOffColor.cgColor
+            }
         }
     }
     
     /// The color of the search bar background when search bar is show
-    public var searchBarOnColor = UIColor.white {
-        didSet {
-            self.searchFrame.layer.backgroundColor = self.searchBarOnColor.cgColor
-        }
-    }
+    public var searchBarOnColor = UIColor.white
     
     // MARK: init
     override init(frame: CGRect)
