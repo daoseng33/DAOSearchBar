@@ -17,40 +17,38 @@ class ViewController: UIViewController, INSSearchBarDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.view.backgroundColor = UIColor(red: 0.000, green: 0.418, blue: 0.673, alpha: 1.000)
         
-        let descriptionLabel: UILabel = UILabel(frame: CGRect(x: 20.0, y: 20.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
+        let descriptionLabel: UILabel = UILabel(frame: CGRect(x: 20.0, y: 44.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
         descriptionLabel.textColor = UIColor.white
         descriptionLabel.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
         descriptionLabel.text = "Without delegate"
         
         self.view.addSubview(descriptionLabel)
         
-        self.searchBarWithoutDelegate.frame = CGRect(x: 20.0, y: 40.0, width: self.view.bounds.width - 40.0, height: 34.0)
+        self.searchBarWithoutDelegate.frame = CGRect(x: 20.0, y: 64.0, width: self.view.bounds.width - 40.0, height: 34.0)
         
         self.view.addSubview(self.searchBarWithoutDelegate)
         
-        let descriptionLabel2: UILabel = UILabel(frame: CGRect(x: 20.0, y: 120.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
+        let descriptionLabel2: UILabel = UILabel(frame: CGRect(x: 20.0, y: 164.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
         descriptionLabel2.textColor = UIColor.white
         descriptionLabel2.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
         descriptionLabel2.text = "With delegate"
         
         self.view.addSubview(descriptionLabel2)
         
-        self.searchBarWithDelegate.frame = CGRect(x: 20.0, y: 140.0, width: 44.0, height: 34.0)
+        self.searchBarWithDelegate.frame = CGRect(x: 20.0, y: 184.0, width: 44.0, height: 34.0)
         self.searchBarWithDelegate.delegate = self;
-        
         self.view.addSubview(self.searchBarWithDelegate)
         
-        let descriptionLabel3: UILabel = UILabel(frame: CGRect(x: 20.0, y: 220.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
+        let descriptionLabel3: UILabel = UILabel(frame: CGRect(x: 20.0, y: 264.0, width: self.view.bounds.size.width - 40.0, height: 20.0))
         descriptionLabel3.textColor = UIColor.white
         descriptionLabel3.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
         descriptionLabel3.text = "Custom color"
         self.view.addSubview(descriptionLabel3)
         
-        self.searchBarWithCustomColor.frame = CGRect(x: 20.0, y: 240.0, width: self.view.bounds.width - 40.0, height: 34.0)
+        self.searchBarWithCustomColor.frame = CGRect(x: 20.0, y: 284.0, width: self.view.bounds.width - 40.0, height: 34.0)
         self.searchBarWithCustomColor.searchOffColor = UIColor.darkGray
         self.searchBarWithCustomColor.searchOnColor = UIColor.white
         self.searchBarWithCustomColor.searchBarOffColor = UIColor.white
@@ -60,15 +58,11 @@ class ViewController: UIViewController, INSSearchBarDelegate
         self.view.addSubview(self.searchBarWithCustomColor)
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // MARK: SearchBar Delegate
     func destinationFrameForSearchBar(_ searchBar: INSSearchBar) -> CGRect
     {
-        return CGRect(x: 20.0, y: 140.0, width: self.view.bounds.size.width - 40.0, height: 34.0)
+        return CGRect(x: 20.0, y: 184.0, width: self.view.bounds.size.width - 40.0, height: 34.0)
     }
     
     func searchBar(_ searchBar: INSSearchBar, willStartTransitioningToState destinationState: INSSearchBarState)

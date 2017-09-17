@@ -3,7 +3,7 @@
 //  DAOSearchBar
 //
 //  Created by daoseng on 2017/8/6.
-//  Copyright © 2017年 Ray. All rights reserved.
+//  Copyright © 2017年 DAO. All rights reserved.
 //
 
 import UIKit
@@ -308,7 +308,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: animation
     
-    func changeStateIfPossible(_ gestureRecognizer: UITapGestureRecognizer)
+    @objc func changeStateIfPossible(_ gestureRecognizer: UITapGestureRecognizer)
     {
         switch self.state
         {
@@ -514,7 +514,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: keyboard
     
-    func keyboardWillShow(_ notification: Notification?)
+    @objc func keyboardWillShow(_ notification: Notification?)
     {
         if self.searchField.isFirstResponder
         {
@@ -522,7 +522,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         }
     }
     
-    func keyboardWillHide(_ notification: Notification?)
+    @objc func keyboardWillHide(_ notification: Notification?)
     {
         if self.searchField.isFirstResponder
         {
@@ -530,7 +530,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         }
     }
     
-    func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer)
+    @objc func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer)
     {
         if (self.searchField.isFirstResponder)
         {
