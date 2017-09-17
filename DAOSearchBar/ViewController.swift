@@ -40,6 +40,7 @@ class ViewController: UIViewController, DAOSearchBarDelegate
         
         self.searchBarWithDelegate.frame = CGRect(x: 20.0, y: 184.0, width: 44.0, height: 34.0)
         self.searchBarWithDelegate.delegate = self;
+        
         self.view.addSubview(self.searchBarWithDelegate)
         
         let descriptionLabel3: UILabel = UILabel(frame: CGRect(x: 20.0, y: 264.0, width: self.view.bounds.size.width - 40.0, height: 20.0))

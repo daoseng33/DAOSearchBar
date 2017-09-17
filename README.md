@@ -1,7 +1,7 @@
 # DAOSearchBar
-DAOSearchBar is based on INSSearchBar: https://github.com/berlininsomniac/INSSearchBar_Swift
+DAOSearchBar is based on DAOSearchBar: https://github.com/berlininsomniac/DAOSearchBar_Swift
 
-It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like INSSearchBar is no longer update anymore.
+It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like DAOSearchBar is no longer update anymore.
 
 So, heres the DAOSearchBar.
 
@@ -9,38 +9,38 @@ So, heres the DAOSearchBar.
 ![withDelegate](https://media.giphy.com/media/NEquunOmZLUv6/giphy.gif)
 ![customColor](https://media.giphy.com/media/EGECl0ncJTUME/giphy.gif)
 
-## What's new in version 1.0.1 ##
-1. Swift 3.0 supported.
-
-2. Now you can custom the search bar background and the magnifier icon color.
+## What's new in version 1.0.3 ##
+1. Swift 4.0 & iOS 11 supported.
 
 ## Requirement ##
-- iOS 9.0
+- iOS 9.0 up
 
-- Swift 3.0
+- Swift 3.0 up
 
-- XCode 8
+- XCode 8 up
 
 ## Installation ##
 ### CocoaPods ###
 ```
-pod 'DAOSearchBar', '~> 1.0.2'
+pod 'DAOSearchBar', '~> 1.0.3'
 ```
 ## Usage ##
 ### Search bar without delegate ###
 ```swift
-self.searchBarWithoutDelegate.frame = CGRect(x: 20.0, y: 40.0, width: self.view.bounds.width - 40.0, height: 34.0)
+self.searchBarWithoutDelegate.frame = CGRect(x: 20.0, y: 64.0, width: self.view.bounds.width - 40.0, height: 34.0)
+
 self.view.addSubview(self.searchBarWithoutDelegate)
 ```
 
 ### Search bar with delegate ###
 ```swift
-class ViewController: UIViewController, INSSearchBarDelegate {}
+class ViewController: UIViewController, DAOSearchBarDelegate {}
 ```
 
 ```swift
-self.searchBarWithDelegate.frame = CGRect(x: 20.0, y: 140.0, width: 44.0, height: 34.0)
+self.searchBarWithDelegate.frame = CGRect(x: 20.0, y: 184.0, width: 44.0, height: 34.0)
 self.searchBarWithDelegate.delegate = self;
+
 self.view.addSubview(self.searchBarWithDelegate)
 ```
 
@@ -54,32 +54,32 @@ self.searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
 
 ### Delegate ###
 ```swift
-func destinationFrameForSearchBar(_ searchBar: INSSearchBar) -> CGRect
-    {
-        return CGRect(x: 20.0, y: 140.0, width: self.view.bounds.size.width - 40.0, height: 34.0)
-    }
- ```
+func destinationFrameForSearchBar(_ searchBar: DAOSearchBar) -> CGRect
+{
+return CGRect(x: 20.0, y: 184.0, width: self.view.bounds.size.width - 40.0, height: 34.0)
+}
+```
  ```swift
- func searchBar(_ searchBar: INSSearchBar, willStartTransitioningToState destinationState: INSSearchBarState)
-    {
-        // Do whatever you deem necessary.
-    }
- ```
- ```swift
- func searchBar(_ searchBar: INSSearchBar, didEndTransitioningFromState previousState: INSSearchBarState)
+ func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState)
     {
         // Do whatever you deem necessary.
     }
  ```
  ```swift
- func searchBarDidTapReturn(_ searchBar: INSSearchBar)
+ func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState)
+    {
+        // Do whatever you deem necessary.
+    }
+ ```
+ ```swift
+ func searchBarDidTapReturn(_ searchBar: DAOSearchBar)
     {
         // Do whatever you deem necessary.
         // Access the text from the search bar like searchBar.searchField.text	
     }
  ```
  ```swift
- func searchBarTextDidChange(_ searchBar: INSSearchBar)
+ func searchBarTextDidChange(_ searchBar: DAOSearchBar)
     {
         // Do whatever you deem necessary.
         // Access the text from the search bar like searchBar.searchField.text
