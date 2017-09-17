@@ -9,10 +9,10 @@
 import UIKit
 
 /**
- *  The different states for an INSSearchBarState.
+ *  The different states for an DAOSearchBarState.
  */
 
-enum INSSearchBarState: Int
+enum DAOSearchBarState: Int
 {
     /**
      *  The default or normal state. The search field is hidden.
@@ -43,7 +43,7 @@ enum INSSearchBarState: Int
  *  The delegate is responsible for providing values to the search bar that it can use to determine its size.
  */
 
-protocol INSSearchBarDelegate
+protocol DAOSearchBarDelegate
 {
     /**
      *  The delegate is asked to provide the destination frame for the search bar when the search bar is transitioning to the visible state.
@@ -53,7 +53,7 @@ protocol INSSearchBarDelegate
      *  @return The frame in the coordinate system of the search bar's superview.
      */
     
-    func destinationFrameForSearchBar(_ searchBar: INSSearchBar) -> CGRect
+    func destinationFrameForSearchBar(_ searchBar: DAOSearchBar) -> CGRect
     
     /**
      *  The delegate is informed about the imminent state transitioning of the status bar.
@@ -62,7 +62,7 @@ protocol INSSearchBarDelegate
      *  @param destinationState The state that the bar will be in once transitioning completes. The current state of the search bar can be queried and will return the state before transitioning.
      */
     
-    func searchBar(_ searchBar: INSSearchBar, willStartTransitioningToState destinationState: INSSearchBarState)
+    func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState)
     
     /**
      *  The delegate is informed about the state transitioning of the status bar that has just occured.
@@ -71,7 +71,7 @@ protocol INSSearchBarDelegate
      *  @param destinationState The state that the bar was in before transitioning started. The current state of the search bar can be queried and will return the state after transitioning.
      */
     
-    func searchBar(_ searchBar: INSSearchBar, didEndTransitioningFromState previousState: INSSearchBarState)
+    func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState)
     
     /**
      *  The delegate is informed that the search bar's return key was pressed. This should be used to start querries.
@@ -79,7 +79,7 @@ protocol INSSearchBarDelegate
      *  @param searchBar        The search bar whose return key was pressed.
      */
     
-    func searchBarDidTapReturn(_ searchBar: INSSearchBar)
+    func searchBarDidTapReturn(_ searchBar: DAOSearchBar)
     
     /**
      *  The delegate is informed that the search bar's text has changed.
@@ -89,30 +89,30 @@ protocol INSSearchBarDelegate
      *  @param searchBar        The search bar whose text did change.
      */
     
-    func searchBarTextDidChange(_ searchBar: INSSearchBar)
+    func searchBarTextDidChange(_ searchBar: DAOSearchBar)
 }
 
-let kINSSearchBarInset: CGFloat = 11.0
-let kINSSearchBarImageSize: CGFloat = 22.0
-let kINSSearchBarAnimationStepDuration: TimeInterval = 0.25
+let kDAOSearchBarInset: CGFloat = 11.0
+let kDAOSearchBarImageSize: CGFloat = 22.0
+let kDAOSearchBarAnimationStepDuration: TimeInterval = 0.25
 
 /**
  *  An animating search bar.
  */
 
-class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
+class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
 {
     /**
      *  The current state of the search bar.
      */
     
-    var state: INSSearchBarState = INSSearchBarState.normal
+    var state: DAOSearchBarState = DAOSearchBarState.normal
     
     /**
-     *  The (optional) delegate is responsible for providing values necessary for state change animations of the search bar. @see INSSearchBarDelegate.
+     *  The (optional) delegate is responsible for providing values necessary for state change animations of the search bar. @see DAOSearchBarDelegate.
      */
     
-    var delegate: INSSearchBarDelegate?
+    var delegate: DAOSearchBarDelegate?
     
     /**
      *  The borderedframe of the search bar. Visible only when search mode is active.
@@ -229,7 +229,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         self.addSubview(self.searchFrame)
         
-        self.searchField.frame = CGRect(x: kINSSearchBarInset, y: 3.0, width: self.bounds.width - (2 * kINSSearchBarInset) - kINSSearchBarImageSize, height: self.bounds.height - 6.0)
+        self.searchField.frame = CGRect(x: kDAOSearchBarInset, y: 3.0, width: self.bounds.width - (2 * kDAOSearchBarInset) - kDAOSearchBarImageSize, height: self.bounds.height - 6.0)
         self.searchField.borderStyle = UITextBorderStyle.none
         self.searchField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.searchField.font = UIFont(name:"AvenirNext-Regular", size:16.0)
@@ -239,7 +239,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         self.searchFrame.addSubview(self.searchField)
         
-        let searchImageViewOnContainerView: UIView = UIView(frame:CGRect(x: self.bounds.width - kINSSearchBarInset - kINSSearchBarImageSize, y: (self.bounds.height - kINSSearchBarImageSize) / 2, width: kINSSearchBarImageSize, height: kINSSearchBarImageSize))
+        let searchImageViewOnContainerView: UIView = UIView(frame:CGRect(x: self.bounds.width - kDAOSearchBarInset - kDAOSearchBarImageSize, y: (self.bounds.height - kDAOSearchBarImageSize) / 2, width: kDAOSearchBarImageSize, height: kDAOSearchBarImageSize))
         searchImageViewOnContainerView.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin, .flexibleBottomMargin]
         
         self.searchFrame.addSubview(searchImageViewOnContainerView)
@@ -272,7 +272,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         searchImageViewOnContainerView.addSubview(self.searchImageCrossRight)
         
-        self.searchImageViewOff.frame = CGRect(x: self.bounds.width - kINSSearchBarInset - kINSSearchBarImageSize, y: (self.bounds.height - kINSSearchBarImageSize) / 2, width: kINSSearchBarImageSize, height: kINSSearchBarImageSize)
+        self.searchImageViewOff.frame = CGRect(x: self.bounds.width - kDAOSearchBarInset - kDAOSearchBarImageSize, y: (self.bounds.height - kDAOSearchBarImageSize) / 2, width: kDAOSearchBarImageSize, height: kDAOSearchBarImageSize)
         self.searchImageViewOff.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin, .flexibleBottomMargin]
         self.searchImageViewOff.alpha = 1.0
         self.searchImageViewOff.image = UIImage(named: "NavBarIconSearch")?.withRenderingMode(.alwaysTemplate)
@@ -280,18 +280,18 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         self.searchFrame.addSubview(self.searchImageViewOff)
         
-        let tapableView: UIView = UIView(frame: CGRect(x: self.bounds.width - (2 * kINSSearchBarInset) - kINSSearchBarImageSize, y: 0.0, width: (2 * kINSSearchBarInset) + kINSSearchBarImageSize, height: self.bounds.height))
+        let tapableView: UIView = UIView(frame: CGRect(x: self.bounds.width - (2 * kDAOSearchBarInset) - kDAOSearchBarImageSize, y: 0.0, width: (2 * kDAOSearchBarInset) + kDAOSearchBarImageSize, height: self.bounds.height))
         tapableView.autoresizingMask = [.flexibleLeftMargin, .flexibleHeight]
-        tapableView.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(INSSearchBar.changeStateIfPossible(_:))))
+        tapableView.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(DAOSearchBar.changeStateIfPossible(_:))))
         
         self.searchFrame.addSubview(tapableView)
         
-        self.keyboardDismissGestureRecognizer.addTarget(self, action: #selector(INSSearchBar.dismissKeyboard(_:)))
+        self.keyboardDismissGestureRecognizer.addTarget(self, action: #selector(DAOSearchBar.dismissKeyboard(_:)))
         self.keyboardDismissGestureRecognizer.cancelsTouchesInView = false
         self.keyboardDismissGestureRecognizer.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(INSSearchBar.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(INSSearchBar.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
     }
     
@@ -312,15 +312,15 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     {
         switch self.state
         {
-        case INSSearchBarState.normal:
+        case DAOSearchBarState.normal:
             
             self.showSearchBar(gestureRecognizer)
             
-        case INSSearchBarState.searchBarVisible:
+        case DAOSearchBarState.searchBarVisible:
             
             self.hideSearchBar(gestureRecognizer)
             
-        case INSSearchBarState.searchBarHasContent:
+        case DAOSearchBarState.searchBarHasContent:
             
             self.searchField.text = nil
             self.textDidChange(nil)
@@ -333,18 +333,18 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     func showSearchBar(_ sender: AnyObject?)
     {
-        if self.state == INSSearchBarState.normal
+        if self.state == DAOSearchBarState.normal
         {
             if let delegate = self.delegate
             {
-                delegate.searchBar(self, willStartTransitioningToState:INSSearchBarState.searchBarVisible)
+                delegate.searchBar(self, willStartTransitioningToState:DAOSearchBarState.searchBarVisible)
             }
             
-            self.state = INSSearchBarState.transitioning
+            self.state = DAOSearchBarState.transitioning
             
             self.searchField.text = nil
             
-            UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+            UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                 
                 self.searchFrame.layer.borderColor = UIColor.white.cgColor
                 
@@ -357,7 +357,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                 
                 self.searchField.becomeFirstResponder()
                 
-                UIView.animate(withDuration: kINSSearchBarAnimationStepDuration * 2, animations: {
+                UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration * 2, animations: {
                     
                     self.searchFrame.layer.backgroundColor = self.searchBarOnColor.cgColor
                     self.searchImageViewOff.alpha = 0.0
@@ -366,11 +366,11 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                     
                 }, completion: { (finished: Bool) in
                     
-                    self.state = INSSearchBarState.searchBarVisible
+                    self.state = DAOSearchBarState.searchBarVisible
                     
                     if let delegate = self.delegate
                     {
-                        delegate.searchBar(self, didEndTransitioningFromState: INSSearchBarState.normal)
+                        delegate.searchBar(self, didEndTransitioningFromState: DAOSearchBarState.normal)
                     }
                 })
             })
@@ -379,20 +379,20 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     func hideSearchBar(_ sender: AnyObject?)
     {
-        if self.state == INSSearchBarState.searchBarVisible || self.state == INSSearchBarState.searchBarHasContent
+        if self.state == DAOSearchBarState.searchBarVisible || self.state == DAOSearchBarState.searchBarHasContent
         {
             self.window?.endEditing(true)
             
             if let delegate = self.delegate
             {
-                delegate.searchBar(self, willStartTransitioningToState: INSSearchBarState.normal)
+                delegate.searchBar(self, willStartTransitioningToState: DAOSearchBarState.normal)
             }
             
             self.searchField.text = nil
             
-            self.state = INSSearchBarState.transitioning
+            self.state = DAOSearchBarState.transitioning
             
-            UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+            UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                 
                 if self.delegate != nil
                 {
@@ -406,7 +406,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                 
             }, completion: { (finished: Bool) in
                 
-                UIView.animate(withDuration: kINSSearchBarAnimationStepDuration * 2, animations: {
+                UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration * 2, animations: {
                     
                     self.searchFrame.layer.borderColor = UIColor.clear.cgColor
                     
@@ -418,11 +418,11 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                     self.searchImageCrossLeft.alpha = 0.0
                     self.searchImageCrossRight.alpha = 0.0
                     
-                    self.state = INSSearchBarState.normal;
+                    self.state = DAOSearchBarState.normal;
                     
                     if let delegate = self.delegate
                     {
-                        delegate.searchBar(self, didEndTransitioningFromState: INSSearchBarState.searchBarVisible)
+                        delegate.searchBar(self, didEndTransitioningFromState: DAOSearchBarState.searchBarVisible)
                     }
                 })
             })
@@ -437,47 +437,47 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         if hasText
         {
-            if self.state == INSSearchBarState.searchBarVisible
+            if self.state == DAOSearchBarState.searchBarVisible
             {
                 
-                self.state = INSSearchBarState.transitioning;
+                self.state = DAOSearchBarState.transitioning;
                 
                 self.searchImageViewOn.alpha = 0.0
                 self.searchImageCircle.alpha = 1.0
                 self.searchImageCrossLeft.alpha = 1.0
                 
-                UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+                UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                     
                     self.searchImageCircle.frame = CGRect(x: 2.0, y: 2.0, width: 18.0, height: 18.0)
                     self.searchImageCrossLeft.frame = CGRect(x: 7.0, y: 7.0, width: 8.0, height: 8.0)
                     
                 }, completion: { (finished: Bool) in
                     
-                    UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+                    UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                         
                         self.searchImageCrossRight.alpha = 1.0
                         
                     }, completion: { (finished: Bool) in
                         
-                        self.state = INSSearchBarState.searchBarHasContent
+                        self.state = DAOSearchBarState.searchBarHasContent
                     })
                 })
             }
         }
         else
         {
-            if self.state == INSSearchBarState.searchBarHasContent
+            if self.state == DAOSearchBarState.searchBarHasContent
             {
                 
-                self.state = INSSearchBarState.transitioning;
+                self.state = DAOSearchBarState.transitioning;
                 
-                UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+                UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                     
                     self.searchImageCrossRight.alpha = 0.0
                     
                 }, completion: { (finished: Bool) in
                     
-                    UIView.animate(withDuration: kINSSearchBarAnimationStepDuration, animations: {
+                    UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                         
                         self.searchImageCircle.frame = CGRect(x: 0.0, y: 0.0, width: 18.0, height: 18.0)
                         self.searchImageCrossLeft.frame = CGRect(x: 14.0, y: 14.0, width: 8.0, height: 8.0)
@@ -488,7 +488,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                         self.searchImageCircle.alpha = 0.0
                         self.searchImageCrossLeft.alpha = 0.0
                         
-                        self.state = INSSearchBarState.searchBarVisible
+                        self.state = DAOSearchBarState.searchBarVisible
                     })
                 })
             }
@@ -535,7 +535,7 @@ class INSSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         if (self.searchField.isFirstResponder)
         {
             self.window?.endEditing(true)
-            if (self.state == INSSearchBarState.searchBarVisible && self.searchField.text!.characters.count == 0)
+            if (self.state == DAOSearchBarState.searchBarVisible && self.searchField.text!.characters.count == 0)
             {
                 self.hideSearchBar(nil)
             }

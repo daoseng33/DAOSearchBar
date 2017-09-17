@@ -3,16 +3,16 @@
 //  DAOSearchBar
 //
 //  Created by daoseng on 2017/8/6.
-//  Copyright © 2017年 Ray. All rights reserved.
+//  Copyright © 2017年 DAO. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, INSSearchBarDelegate
+class ViewController: UIViewController, DAOSearchBarDelegate
 {
-    let searchBarWithoutDelegate: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
-    let searchBarWithDelegate: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
-    let searchBarWithCustomColor: INSSearchBar = INSSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
+    let searchBarWithoutDelegate: DAOSearchBar = DAOSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
+    let searchBarWithDelegate: DAOSearchBar = DAOSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
+    let searchBarWithCustomColor: DAOSearchBar = DAOSearchBar(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 34.0))
     
     override func viewDidLoad()
     {
@@ -60,28 +60,28 @@ class ViewController: UIViewController, INSSearchBarDelegate
     
     
     // MARK: SearchBar Delegate
-    func destinationFrameForSearchBar(_ searchBar: INSSearchBar) -> CGRect
+    func destinationFrameForSearchBar(_ searchBar: DAOSearchBar) -> CGRect
     {
         return CGRect(x: 20.0, y: 184.0, width: self.view.bounds.size.width - 40.0, height: 34.0)
     }
     
-    func searchBar(_ searchBar: INSSearchBar, willStartTransitioningToState destinationState: INSSearchBarState)
+    func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState)
     {
         // Do whatever you deem necessary.
     }
     
-    func searchBar(_ searchBar: INSSearchBar, didEndTransitioningFromState previousState: INSSearchBarState)
+    func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState)
     {
         // Do whatever you deem necessary.
     }
     
-    func searchBarDidTapReturn(_ searchBar: INSSearchBar)
+    func searchBarDidTapReturn(_ searchBar: DAOSearchBar)
     {
         // Do whatever you deem necessary.
         // Access the text from the search bar like searchBar.searchField.text	
     }
     
-    func searchBarTextDidChange(_ searchBar: INSSearchBar)
+    func searchBarTextDidChange(_ searchBar: DAOSearchBar)
     {
         // Do whatever you deem necessary.
         // Access the text from the search bar like searchBar.searchField.text

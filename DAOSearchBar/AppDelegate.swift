@@ -3,7 +3,7 @@
 //  DAOSearchBar
 //
 //  Created by daoseng on 2017/8/6.
-//  Copyright © 2017年 Ray. All rights reserved.
+//  Copyright © 2017年 DAO. All rights reserved.
 //
 
 import UIKit
