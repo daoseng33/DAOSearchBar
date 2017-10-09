@@ -1,7 +1,7 @@
 # DAOSearchBar
-DAOSearchBar is based on DAOSearchBar: https://github.com/berlininsomniac/DAOSearchBar_Swift
+DAOSearchBar is based on INSSearchBar: https://github.com/berlininsomniac/INSSearchBar_Swift
 
-It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like DAOSearchBar is no longer update anymore.
+It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like INSSearchBar is no longer update anymore.
 
 So, heres the DAOSearchBar.
 
