@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DAOSearchBar.xcodeproj">
+      location = "self:DAOSearchBarDemo.xcodeproj">
    </FileRef>
 </Workspace>

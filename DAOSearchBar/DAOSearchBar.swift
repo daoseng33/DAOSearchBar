@@ -12,8 +12,7 @@ import UIKit
  *  The different states for an DAOSearchBarState.
  */
 
-enum DAOSearchBarState: Int
-{
+enum DAOSearchBarState: Int {
     /**
      *  The default or normal state. The search field is hidden.
      */
@@ -43,8 +42,7 @@ enum DAOSearchBarState: Int
  *  The delegate is responsible for providing values to the search bar that it can use to determine its size.
  */
 
-protocol DAOSearchBarDelegate
-{
+protocol DAOSearchBarDelegate {
     /**
      *  The delegate is asked to provide the destination frame for the search bar when the search bar is transitioning to the visible state.
      *
@@ -100,8 +98,7 @@ let kDAOSearchBarAnimationStepDuration: TimeInterval = 0.25
  *  An animating search bar.
  */
 
-class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
-{
+class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
     /**
      *  The current state of the search bar.
      */
@@ -200,8 +197,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     public var searchBarOnColor = UIColor.white
     
     // MARK: init
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         self.searchFrame = UIView(frame: CGRect.zero)
         self.searchField = UITextField(frame: CGRect.zero)
         self.searchImageViewOff = UIImageView(frame: CGRect.zero)
@@ -292,15 +288,14 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         
         NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.textDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
     }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit
-    {
+    deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
@@ -308,10 +303,8 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: animation
     
-    @objc func changeStateIfPossible(_ gestureRecognizer: UITapGestureRecognizer)
-    {
-        switch self.state
-        {
+    @objc func changeStateIfPossible(_ gestureRecognizer: UITapGestureRecognizer) {
+        switch self.state {
         case DAOSearchBarState.normal:
             
             self.showSearchBar(gestureRecognizer)
@@ -331,12 +324,9 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         }
     }
     
-    func showSearchBar(_ sender: AnyObject?)
-    {
-        if self.state == DAOSearchBarState.normal
-        {
-            if let delegate = self.delegate
-            {
+    func showSearchBar(_ sender: AnyObject?) {
+        if self.state == DAOSearchBarState.normal {
+            if let delegate = self.delegate {
                 delegate.searchBar(self, willStartTransitioningToState:DAOSearchBarState.searchBarVisible)
             }
             
@@ -348,8 +338,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                 
                 self.searchFrame.layer.borderColor = UIColor.white.cgColor
                 
-                if let delegate = self.delegate
-                {
+                if let delegate = self.delegate {
                     self.originalFrame = self.frame
                     self.frame = delegate.destinationFrameForSearchBar(self)
                 }
@@ -368,8 +357,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                     
                     self.state = DAOSearchBarState.searchBarVisible
                     
-                    if let delegate = self.delegate
-                    {
+                    if let delegate = self.delegate {
                         delegate.searchBar(self, didEndTransitioningFromState: DAOSearchBarState.normal)
                     }
                 })
@@ -377,14 +365,11 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
         }
     }
     
-    func hideSearchBar(_ sender: AnyObject?)
-    {
-        if self.state == DAOSearchBarState.searchBarVisible || self.state == DAOSearchBarState.searchBarHasContent
-        {
+    func hideSearchBar(_ sender: AnyObject?) {
+        if self.state == DAOSearchBarState.searchBarVisible || self.state == DAOSearchBarState.searchBarHasContent {
             self.window?.endEditing(true)
             
-            if let delegate = self.delegate
-            {
+            if let delegate = self.delegate {
                 delegate.searchBar(self, willStartTransitioningToState: DAOSearchBarState.normal)
             }
             
@@ -394,8 +379,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
             
             UIView.animate(withDuration: kDAOSearchBarAnimationStepDuration, animations: {
                 
-                if self.delegate != nil
-                {
+                if self.delegate != nil {
                     self.frame = self.originalFrame
                 }
                 
@@ -420,8 +404,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                     
                     self.state = DAOSearchBarState.normal;
                     
-                    if let delegate = self.delegate
-                    {
+                    if let delegate = self.delegate {
                         delegate.searchBar(self, didEndTransitioningFromState: DAOSearchBarState.searchBarVisible)
                     }
                 })
@@ -431,14 +414,11 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: text filed
     
-    func textDidChange(_ notification: Notification?)
-    {
-        let hasText: Bool = self.searchField.text!.characters.count != 0
+    @objc func textDidChange(_ notification: Notification?) {
+        let hasText: Bool = self.searchField.text!.count != 0
         
-        if hasText
-        {
-            if self.state == DAOSearchBarState.searchBarVisible
-            {
+        if hasText {
+            if self.state == DAOSearchBarState.searchBarVisible {
                 
                 self.state = DAOSearchBarState.transitioning;
                 
@@ -464,10 +444,8 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
                 })
             }
         }
-        else
-        {
-            if self.state == DAOSearchBarState.searchBarHasContent
-            {
+        else {
+            if self.state == DAOSearchBarState.searchBarHasContent {
                 
                 self.state = DAOSearchBarState.transitioning;
                 
@@ -494,18 +472,15 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
             }
         }
         
-        if let delegate = self.delegate
-        {
+        if let delegate = self.delegate {
             delegate.searchBarTextDidChange(self)
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let retVal: Bool = true;
         
-        if let delegate = self.delegate
-        {
+        if let delegate = self.delegate {
             delegate.searchBarDidTapReturn(self)
         }
         
@@ -514,28 +489,22 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: keyboard
     
-    @objc func keyboardWillShow(_ notification: Notification?)
-    {
-        if self.searchField.isFirstResponder
-        {
+    @objc func keyboardWillShow(_ notification: Notification?) {
+        if self.searchField.isFirstResponder {
             self.window?.rootViewController?.view.addGestureRecognizer(self.keyboardDismissGestureRecognizer)
         }
     }
     
-    @objc func keyboardWillHide(_ notification: Notification?)
-    {
-        if self.searchField.isFirstResponder
-        {
+    @objc func keyboardWillHide(_ notification: Notification?) {
+        if self.searchField.isFirstResponder {
             self.window?.rootViewController?.view.addGestureRecognizer(self.keyboardDismissGestureRecognizer)
         }
     }
     
-    @objc func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer)
-    {
-        if (self.searchField.isFirstResponder)
-        {
+    @objc func dismissKeyboard(_ gestureRecognizer: UITapGestureRecognizer) {
+        if (self.searchField.isFirstResponder) {
             self.window?.endEditing(true)
-            if (self.state == DAOSearchBarState.searchBarVisible && self.searchField.text!.characters.count == 0)
+            if (self.state == DAOSearchBarState.searchBarVisible && self.searchField.text!.count == 0)
             {
                 self.hideSearchBar(nil)
             }
@@ -544,12 +513,10 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate
     
     // MARK: gesture
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
-    {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         var retVal: Bool = true
         
-        if self.bounds.contains(touch.location(in: self))
-        {
+        if self.bounds.contains(touch.location(in: self)) {
             retVal = false
         }
         
