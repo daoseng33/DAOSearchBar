@@ -12,7 +12,7 @@ import UIKit
  *  The different states for an DAOSearchBarState.
  */
 
-enum DAOSearchBarState: Int {
+public enum DAOSearchBarState: Int {
     /**
      *  The default or normal state. The search field is hidden.
      */
@@ -42,7 +42,7 @@ enum DAOSearchBarState: Int {
  *  The delegate is responsible for providing values to the search bar that it can use to determine its size.
  */
 
-protocol DAOSearchBarDelegate {
+public protocol DAOSearchBarDelegate {
     /**
      *  The delegate is asked to provide the destination frame for the search bar when the search bar is transitioning to the visible state.
      *
@@ -98,7 +98,7 @@ let kDAOSearchBarAnimationStepDuration: TimeInterval = 0.25
  *  An animating search bar.
  */
 
-class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
+public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
     /**
      *  The current state of the search bar.
      */
@@ -290,8 +290,8 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.textDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -477,7 +477,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let retVal: Bool = true;
         
         if let delegate = self.delegate {
@@ -513,7 +513,7 @@ class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     // MARK: gesture
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         var retVal: Bool = true
         
         if self.bounds.contains(touch.location(in: self)) {
