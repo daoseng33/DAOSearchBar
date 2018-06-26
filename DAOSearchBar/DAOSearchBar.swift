@@ -197,7 +197,7 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
     public var searchBarOnColor = UIColor.white
     
     // MARK: init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         self.searchFrame = UIView(frame: CGRect.zero)
         self.searchField = UITextField(frame: CGRect.zero)
         self.searchImageViewOff = UIImageView(frame: CGRect.zero)
