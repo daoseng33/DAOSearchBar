@@ -10,9 +10,16 @@
 		1CD20D521FB6E3FA005C7E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D511FB6E3FA005C7E6F /* AppDelegate.swift */; };
 		1CD20D541FB6E3FA005C7E6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D531FB6E3FA005C7E6F /* ViewController.swift */; };
 		1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D551FB6E3FA005C7E6F /* Main.storyboard */; };
-		1CD20D591FB6E3FA005C7E6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D581FB6E3FA005C7E6F /* Assets.xcassets */; };
 		1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D5A1FB6E3FA005C7E6F /* LaunchScreen.storyboard */; };
 		1CD20D681FB71A7B005C7E6F /* DAOSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */; };
+		EAB70F1720E29A8F0093A1EC /* NavBarIconSearchCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */; };
+		EAB70F1820E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */; };
+		EAB70F1B20E29A9D0093A1EC /* NavBarIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */; };
+		EAB70F1C20E29A9D0093A1EC /* NavBarIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */; };
+		EAB70F1F20E29AA60093A1EC /* NavBarIconSearchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */; };
+		EAB70F2020E29AA60093A1EC /* NavBarIconSearchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */; };
+		EAB70F2320E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */; };
+		EAB70F2420E29AAE0093A1EC /* NavBarIconSearchBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +27,17 @@
 		1CD20D511FB6E3FA005C7E6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD20D531FB6E3FA005C7E6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1CD20D561FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1CD20D581FB6E3FA005C7E6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CD20D5B1FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD20D5D1FB6E3FA005C7E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOSearchBar.swift; sourceTree = "<group>"; };
+		EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchCircle.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchCircle.imageset/NavBarIconSearchCircle.png; sourceTree = SOURCE_ROOT; };
+		EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchCircle@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchCircle.imageset/NavBarIconSearchCircle@2x.png"; sourceTree = SOURCE_ROOT; };
+		EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearch@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearch.imageset/NavBarIconSearch@2x.png"; sourceTree = SOURCE_ROOT; };
+		EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearch.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearch.imageset/NavBarIconSearch.png; sourceTree = SOURCE_ROOT; };
+		EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchBar@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar.imageset/NavBarIconSearchBar@2x.png"; sourceTree = SOURCE_ROOT; };
+		EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchBar.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar.imageset/NavBarIconSearchBar.png; sourceTree = SOURCE_ROOT; };
+		EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchBar2@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar2.imageset/NavBarIconSearchBar2@2x.png"; sourceTree = SOURCE_ROOT; };
+		EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchBar2.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar2.imageset/NavBarIconSearchBar2.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +74,6 @@
 				1CD20D511FB6E3FA005C7E6F /* AppDelegate.swift */,
 				1CD20D531FB6E3FA005C7E6F /* ViewController.swift */,
 				1CD20D551FB6E3FA005C7E6F /* Main.storyboard */,
-				1CD20D581FB6E3FA005C7E6F /* Assets.xcassets */,
 				1CD20D5A1FB6E3FA005C7E6F /* LaunchScreen.storyboard */,
 				1CD20D5D1FB6E3FA005C7E6F /* Info.plist */,
 			);
@@ -70,10 +83,26 @@
 		1CD20D661FB71A7B005C7E6F /* DAOSearchBar */ = {
 			isa = PBXGroup;
 			children = (
+				EAB70F1420E29A720093A1EC /* Resoources */,
 				1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */,
 			);
 			path = DAOSearchBar;
 			sourceTree = SOURCE_ROOT;
+		};
+		EAB70F1420E29A720093A1EC /* Resoources */ = {
+			isa = PBXGroup;
+			children = (
+				EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */,
+				EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */,
+				EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */,
+				EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */,
+				EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */,
+				EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */,
+				EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */,
+				EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */,
+			);
+			path = Resoources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -134,8 +163,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB70F2320E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png in Resources */,
+				EAB70F1820E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png in Resources */,
+				EAB70F1B20E29A9D0093A1EC /* NavBarIconSearch@2x.png in Resources */,
+				EAB70F1C20E29A9D0093A1EC /* NavBarIconSearch.png in Resources */,
+				EAB70F1720E29A8F0093A1EC /* NavBarIconSearchCircle.png in Resources */,
 				1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */,
-				1CD20D591FB6E3FA005C7E6F /* Assets.xcassets in Resources */,
+				EAB70F1F20E29AA60093A1EC /* NavBarIconSearchBar@2x.png in Resources */,
+				EAB70F2420E29AAE0093A1EC /* NavBarIconSearchBar2.png in Resources */,
+				EAB70F2020E29AA60093A1EC /* NavBarIconSearchBar.png in Resources */,
 				1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
