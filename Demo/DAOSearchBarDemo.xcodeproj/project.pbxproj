@@ -12,14 +12,14 @@
 		1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D551FB6E3FA005C7E6F /* Main.storyboard */; };
 		1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D5A1FB6E3FA005C7E6F /* LaunchScreen.storyboard */; };
 		1CD20D681FB71A7B005C7E6F /* DAOSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */; };
-		EAB70F1720E29A8F0093A1EC /* NavBarIconSearchCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */; };
-		EAB70F1820E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */; };
-		EAB70F1B20E29A9D0093A1EC /* NavBarIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */; };
-		EAB70F1C20E29A9D0093A1EC /* NavBarIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */; };
-		EAB70F1F20E29AA60093A1EC /* NavBarIconSearchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */; };
-		EAB70F2020E29AA60093A1EC /* NavBarIconSearchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */; };
-		EAB70F2320E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */; };
-		EAB70F2420E29AAE0093A1EC /* NavBarIconSearchBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */; };
+		EA3DCD1D210C5E6500ED16E9 /* NavBarIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */; };
+		EA3DCD1E210C5E6500ED16E9 /* NavBarIconSearchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */; };
+		EA3DCD1F210C5E6500ED16E9 /* NavBarIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */; };
+		EA3DCD20210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */; };
+		EA3DCD21210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */; };
+		EA3DCD22210C5E6500ED16E9 /* NavBarIconSearchCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */; };
+		EA3DCD23210C5E6500ED16E9 /* NavBarIconSearchBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */; };
+		EA3DCD24210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +30,14 @@
 		1CD20D5B1FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD20D5D1FB6E3FA005C7E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOSearchBar.swift; sourceTree = "<group>"; };
-		EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchCircle.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchCircle.imageset/NavBarIconSearchCircle.png; sourceTree = SOURCE_ROOT; };
-		EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchCircle@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchCircle.imageset/NavBarIconSearchCircle@2x.png"; sourceTree = SOURCE_ROOT; };
-		EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearch@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearch.imageset/NavBarIconSearch@2x.png"; sourceTree = SOURCE_ROOT; };
-		EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearch.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearch.imageset/NavBarIconSearch.png; sourceTree = SOURCE_ROOT; };
-		EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchBar@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar.imageset/NavBarIconSearchBar@2x.png"; sourceTree = SOURCE_ROOT; };
-		EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchBar.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar.imageset/NavBarIconSearchBar.png; sourceTree = SOURCE_ROOT; };
-		EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBarIconSearchBar2@2x.png"; path = "DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar2.imageset/NavBarIconSearchBar2@2x.png"; sourceTree = SOURCE_ROOT; };
-		EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBarIconSearchBar2.png; path = DAOSearchBarDemo/Assets.xcassets/NavBarIconSearchBar2.imageset/NavBarIconSearchBar2.png; sourceTree = SOURCE_ROOT; };
+		EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearch.png; sourceTree = "<group>"; };
+		EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchBar.png; sourceTree = "<group>"; };
+		EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearch@2x.png"; sourceTree = "<group>"; };
+		EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchCircle@2x.png"; sourceTree = "<group>"; };
+		EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchBar@2x.png"; sourceTree = "<group>"; };
+		EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchCircle.png; sourceTree = "<group>"; };
+		EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchBar2.png; sourceTree = "<group>"; };
+		EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchBar2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,25 +83,26 @@
 		1CD20D661FB71A7B005C7E6F /* DAOSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				EAB70F1420E29A720093A1EC /* Resoources */,
+				EA3DCD14210C5E6500ED16E9 /* Resources */,
 				1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */,
 			);
-			path = DAOSearchBar;
+			name = DAOSearchBar;
+			path = ../DAOSearchBar;
 			sourceTree = SOURCE_ROOT;
 		};
-		EAB70F1420E29A720093A1EC /* Resoources */ = {
+		EA3DCD14210C5E6500ED16E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EAB70F2220E29AAE0093A1EC /* NavBarIconSearchBar2.png */,
-				EAB70F2120E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png */,
-				EAB70F1E20E29AA60093A1EC /* NavBarIconSearchBar.png */,
-				EAB70F1D20E29AA60093A1EC /* NavBarIconSearchBar@2x.png */,
-				EAB70F1A20E29A9D0093A1EC /* NavBarIconSearch.png */,
-				EAB70F1920E29A9D0093A1EC /* NavBarIconSearch@2x.png */,
-				EAB70F1520E29A8F0093A1EC /* NavBarIconSearchCircle.png */,
-				EAB70F1620E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png */,
+				EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */,
+				EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */,
+				EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */,
+				EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */,
+				EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */,
+				EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */,
+				EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */,
+				EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */,
 			);
-			path = Resoources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,15 +164,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB70F2320E29AAE0093A1EC /* NavBarIconSearchBar2@2x.png in Resources */,
-				EAB70F1820E29A8F0093A1EC /* NavBarIconSearchCircle@2x.png in Resources */,
-				EAB70F1B20E29A9D0093A1EC /* NavBarIconSearch@2x.png in Resources */,
-				EAB70F1C20E29A9D0093A1EC /* NavBarIconSearch.png in Resources */,
-				EAB70F1720E29A8F0093A1EC /* NavBarIconSearchCircle.png in Resources */,
+				EA3DCD24210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png in Resources */,
+				EA3DCD22210C5E6500ED16E9 /* NavBarIconSearchCircle.png in Resources */,
+				EA3DCD1E210C5E6500ED16E9 /* NavBarIconSearchBar.png in Resources */,
+				EA3DCD23210C5E6500ED16E9 /* NavBarIconSearchBar2.png in Resources */,
 				1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */,
-				EAB70F1F20E29AA60093A1EC /* NavBarIconSearchBar@2x.png in Resources */,
-				EAB70F2420E29AAE0093A1EC /* NavBarIconSearchBar2.png in Resources */,
-				EAB70F2020E29AA60093A1EC /* NavBarIconSearchBar.png in Resources */,
+				EA3DCD1F210C5E6500ED16E9 /* NavBarIconSearch@2x.png in Resources */,
+				EA3DCD21210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png in Resources */,
+				EA3DCD20210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png in Resources */,
+				EA3DCD1D210C5E6500ED16E9 /* NavBarIconSearch.png in Resources */,
 				1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
