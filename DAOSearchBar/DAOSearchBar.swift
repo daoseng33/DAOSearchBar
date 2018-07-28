@@ -240,30 +240,31 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
         
         self.searchFrame.addSubview(searchImageViewOnContainerView)
         
+        let bundle = Bundle(for: DAOSearchBar.self)
         self.searchImageViewOn.frame = searchImageViewOnContainerView.bounds
         self.searchImageViewOn.alpha = 0.0
-        self.searchImageViewOn.image = UIImage(named: "NavBarIconSearch")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageViewOn.image = UIImage(named: "NavBarIconSearch", in: bundle, compatibleWith: nil)
         self.searchImageViewOn.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageViewOn)
         
         self.searchImageCircle.frame = CGRect(x: 0.0, y: 0.0, width: 18.0, height: 18.0)
         self.searchImageCircle.alpha = 0.0
-        self.searchImageCircle.image = UIImage(named: "NavBarIconSearchCircle")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCircle.image = UIImage(named: "NavBarIconSearchCircle", in: bundle, compatibleWith: nil)
         self.searchImageCircle.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCircle)
         
         self.searchImageCrossLeft.frame = CGRect(x: 14.0, y: 14.0, width: 8.0, height: 8.0)
         self.searchImageCrossLeft.alpha = 0.0
-        self.searchImageCrossLeft.image = UIImage(named: "NavBarIconSearchBar")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCrossLeft.image = UIImage(named: "NavBarIconSearchBar", in: bundle, compatibleWith: nil)
         self.searchImageCrossLeft.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCrossLeft)
         
         self.searchImageCrossRight.frame = CGRect(x: 7.0, y: 7.0, width: 8.0, height: 8.0)
         self.searchImageCrossRight.alpha = 0.0
-        self.searchImageCrossRight.image = UIImage(named: "NavBarIconSearchBar2")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageCrossRight.image = UIImage(named: "NavBarIconSearchBar2", in: bundle, compatibleWith: nil)
         self.searchImageCrossRight.tintColor = self.searchOnColor
         
         searchImageViewOnContainerView.addSubview(self.searchImageCrossRight)
@@ -271,7 +272,7 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
         self.searchImageViewOff.frame = CGRect(x: self.bounds.width - kDAOSearchBarInset - kDAOSearchBarImageSize, y: (self.bounds.height - kDAOSearchBarImageSize) / 2, width: kDAOSearchBarImageSize, height: kDAOSearchBarImageSize)
         self.searchImageViewOff.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin, .flexibleBottomMargin]
         self.searchImageViewOff.alpha = 1.0
-        self.searchImageViewOff.image = UIImage(named: "NavBarIconSearch")?.withRenderingMode(.alwaysTemplate)
+        self.searchImageViewOff.image = UIImage(named: "NavBarIconSearch", in: bundle, compatibleWith: nil)
         self.searchImageViewOff.tintColor = self.searchOffColor
         
         self.searchFrame.addSubview(self.searchImageViewOff)

@@ -12,14 +12,7 @@
 		1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D551FB6E3FA005C7E6F /* Main.storyboard */; };
 		1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D5A1FB6E3FA005C7E6F /* LaunchScreen.storyboard */; };
 		1CD20D681FB71A7B005C7E6F /* DAOSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */; };
-		EA3DCD1D210C5E6500ED16E9 /* NavBarIconSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */; };
-		EA3DCD1E210C5E6500ED16E9 /* NavBarIconSearchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */; };
-		EA3DCD1F210C5E6500ED16E9 /* NavBarIconSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */; };
-		EA3DCD20210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */; };
-		EA3DCD21210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */; };
-		EA3DCD22210C5E6500ED16E9 /* NavBarIconSearchCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */; };
-		EA3DCD23210C5E6500ED16E9 /* NavBarIconSearchBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */; };
-		EA3DCD24210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */; };
+		EA3DCD26210C72C700ED16E9 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3DCD25210C72C700ED16E9 /* Resources.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +23,7 @@
 		1CD20D5B1FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD20D5D1FB6E3FA005C7E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOSearchBar.swift; sourceTree = "<group>"; };
-		EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearch.png; sourceTree = "<group>"; };
-		EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchBar.png; sourceTree = "<group>"; };
-		EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearch@2x.png"; sourceTree = "<group>"; };
-		EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchCircle@2x.png"; sourceTree = "<group>"; };
-		EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchBar@2x.png"; sourceTree = "<group>"; };
-		EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchCircle.png; sourceTree = "<group>"; };
-		EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarIconSearchBar2.png; sourceTree = "<group>"; };
-		EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarIconSearchBar2@2x.png"; sourceTree = "<group>"; };
+		EA3DCD25210C72C700ED16E9 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,27 +69,12 @@
 		1CD20D661FB71A7B005C7E6F /* DAOSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				EA3DCD14210C5E6500ED16E9 /* Resources */,
 				1CD20D671FB71A7B005C7E6F /* DAOSearchBar.swift */,
+				EA3DCD25210C72C700ED16E9 /* Resources.xcassets */,
 			);
 			name = DAOSearchBar;
 			path = ../DAOSearchBar;
 			sourceTree = SOURCE_ROOT;
-		};
-		EA3DCD14210C5E6500ED16E9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EA3DCD15210C5E6500ED16E9 /* NavBarIconSearch.png */,
-				EA3DCD16210C5E6500ED16E9 /* NavBarIconSearchBar.png */,
-				EA3DCD17210C5E6500ED16E9 /* NavBarIconSearch@2x.png */,
-				EA3DCD18210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png */,
-				EA3DCD19210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png */,
-				EA3DCD1A210C5E6500ED16E9 /* NavBarIconSearchCircle.png */,
-				EA3DCD1B210C5E6500ED16E9 /* NavBarIconSearchBar2.png */,
-				EA3DCD1C210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -164,15 +135,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA3DCD24210C5E6500ED16E9 /* NavBarIconSearchBar2@2x.png in Resources */,
-				EA3DCD22210C5E6500ED16E9 /* NavBarIconSearchCircle.png in Resources */,
-				EA3DCD1E210C5E6500ED16E9 /* NavBarIconSearchBar.png in Resources */,
-				EA3DCD23210C5E6500ED16E9 /* NavBarIconSearchBar2.png in Resources */,
+				EA3DCD26210C72C700ED16E9 /* Resources.xcassets in Resources */,
 				1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */,
-				EA3DCD1F210C5E6500ED16E9 /* NavBarIconSearch@2x.png in Resources */,
-				EA3DCD21210C5E6500ED16E9 /* NavBarIconSearchBar@2x.png in Resources */,
-				EA3DCD20210C5E6500ED16E9 /* NavBarIconSearchCircle@2x.png in Resources */,
-				EA3DCD1D210C5E6500ED16E9 /* NavBarIconSearch.png in Resources */,
 				1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R33X9HN7ET;
 				INFOPLIST_FILE = DAOSearchBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -338,7 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R33X9HN7ET;
 				INFOPLIST_FILE = DAOSearchBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
