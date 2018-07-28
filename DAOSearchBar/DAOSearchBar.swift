@@ -42,7 +42,7 @@ public enum DAOSearchBarState: Int {
  *  The delegate is responsible for providing values to the search bar that it can use to determine its size.
  */
 
-public protocol DAOSearchBarDelegate {
+public protocol DAOSearchBarDelegate: class {
     /**
      *  The delegate is asked to provide the destination frame for the search bar when the search bar is transitioning to the visible state.
      *
@@ -103,55 +103,55 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
      *  The current state of the search bar.
      */
     
-    var state: DAOSearchBarState = DAOSearchBarState.normal
+    public var state: DAOSearchBarState = DAOSearchBarState.normal
     
     /**
      *  The (optional) delegate is responsible for providing values necessary for state change animations of the search bar. @see DAOSearchBarDelegate.
      */
     
-    var delegate: DAOSearchBarDelegate?
+    public var delegate: DAOSearchBarDelegate?
     
     /**
      *  The borderedframe of the search bar. Visible only when search mode is active.
      */
     
-    let searchFrame: UIView
+    public let searchFrame: UIView
     
     /**
      *  The text field used for entering search queries. Visible only when search is active.
      */
     
-    let searchField: UITextField
+    public let searchField: UITextField
     
     /**
      *  The image view containing the search magnifying glass icon in white. Visible when search is not active.
      */
     
-    let searchImageViewOff: UIImageView
+    public let searchImageViewOff: UIImageView
     
     /**
      *  The image view containing the search magnifying glass icon in blue. Visible when search is active.
      */
     
-    let searchImageViewOn: UIImageView
+    public let searchImageViewOn: UIImageView
     
     /**
      *  The image view containing the circle part of the magnifying glass icon in blue.
      */
     
-    let searchImageCircle: UIImageView
+    public let searchImageCircle: UIImageView
     
     /**
      *  The image view containing the left cross part of the magnifying glass icon in blue.
      */
     
-    let searchImageCrossLeft: UIImageView
+    public let searchImageCrossLeft: UIImageView
     
     /**
      *  The image view containing the right cross part of the magnifying glass icon in blue.
      */
     
-    let searchImageCrossRight: UIImageView
+    public let searchImageCrossRight: UIImageView
     
     /**
      *  A gesture recognizer responsible for closing the keyboard once tapped on.
@@ -159,12 +159,12 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
      *	Added to the window's root view controller view and set to allow touches to propagate to that view.
      */
     
-    let keyboardDismissGestureRecognizer: UITapGestureRecognizer
+    public let keyboardDismissGestureRecognizer: UITapGestureRecognizer
     
     /**
      *  The frame of the search bar before a transition started. Only set if delegate is not nil.
      */
-    var originalFrame: CGRect
+    public var originalFrame: CGRect
     
     /// The color of the icon image when search bar is not show
     public var searchOffColor = UIColor.white {
