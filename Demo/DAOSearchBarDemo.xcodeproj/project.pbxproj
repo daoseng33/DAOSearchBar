@@ -11,9 +11,9 @@
 		1CD20D541FB6E3FA005C7E6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD20D531FB6E3FA005C7E6F /* ViewController.swift */; };
 		1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D551FB6E3FA005C7E6F /* Main.storyboard */; };
 		1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD20D5A1FB6E3FA005C7E6F /* LaunchScreen.storyboard */; };
-		EA51614D210C9E9700632629 /* DAOBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA516149210C9E9700632629 /* DAOBundle.swift */; };
-		EA51614E210C9E9700632629 /* DAOSearchBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA51614B210C9E9700632629 /* DAOSearchBar.bundle */; };
-		EA51614F210C9E9700632629 /* DAOSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51614C210C9E9700632629 /* DAOSearchBar.swift */; };
+		EA516155210C9F5D00632629 /* DAOBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA516151210C9F5D00632629 /* DAOBundle.swift */; };
+		EA516156210C9F5D00632629 /* DAOSearchBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA516153210C9F5D00632629 /* DAOSearchBar.bundle */; };
+		EA516157210C9F5D00632629 /* DAOSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA516154210C9F5D00632629 /* DAOSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +23,9 @@
 		1CD20D561FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CD20D5B1FB6E3FA005C7E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD20D5D1FB6E3FA005C7E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA516149210C9E9700632629 /* DAOBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOBundle.swift; sourceTree = "<group>"; };
-		EA51614B210C9E9700632629 /* DAOSearchBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DAOSearchBar.bundle; sourceTree = "<group>"; };
-		EA51614C210C9E9700632629 /* DAOSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOSearchBar.swift; sourceTree = "<group>"; };
+		EA516151210C9F5D00632629 /* DAOBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOBundle.swift; sourceTree = "<group>"; };
+		EA516153210C9F5D00632629 /* DAOSearchBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DAOSearchBar.bundle; sourceTree = "<group>"; };
+		EA516154210C9F5D00632629 /* DAOSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +42,7 @@
 		1CD20D451FB6E3FA005C7E6F = {
 			isa = PBXGroup;
 			children = (
+				EA516150210C9F5D00632629 /* DAOSearchBar */,
 				1CD20D501FB6E3FA005C7E6F /* DAOSearchBarDemo */,
 				1CD20D4F1FB6E3FA005C7E6F /* Products */,
 			);
@@ -58,7 +59,6 @@
 		1CD20D501FB6E3FA005C7E6F /* DAOSearchBarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				EA516148210C9E9700632629 /* DAOSearchBar */,
 				1CD20D511FB6E3FA005C7E6F /* AppDelegate.swift */,
 				1CD20D531FB6E3FA005C7E6F /* ViewController.swift */,
 				1CD20D551FB6E3FA005C7E6F /* Main.storyboard */,
@@ -68,21 +68,21 @@
 			path = DAOSearchBarDemo;
 			sourceTree = "<group>";
 		};
-		EA516148210C9E9700632629 /* DAOSearchBar */ = {
+		EA516150210C9F5D00632629 /* DAOSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				EA51614C210C9E9700632629 /* DAOSearchBar.swift */,
-				EA516149210C9E9700632629 /* DAOBundle.swift */,
-				EA51614A210C9E9700632629 /* Resources */,
+				EA516154210C9F5D00632629 /* DAOSearchBar.swift */,
+				EA516151210C9F5D00632629 /* DAOBundle.swift */,
+				EA516152210C9F5D00632629 /* Resources */,
 			);
 			name = DAOSearchBar;
-			path = ../../DAOSearchBar;
+			path = ../DAOSearchBar;
 			sourceTree = "<group>";
 		};
-		EA51614A210C9E9700632629 /* Resources */ = {
+		EA516152210C9F5D00632629 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EA51614B210C9E9700632629 /* DAOSearchBar.bundle */,
+				EA516153210C9F5D00632629 /* DAOSearchBar.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			files = (
 				1CD20D5C1FB6E3FA005C7E6F /* LaunchScreen.storyboard in Resources */,
 				1CD20D571FB6E3FA005C7E6F /* Main.storyboard in Resources */,
-				EA51614E210C9E9700632629 /* DAOSearchBar.bundle in Resources */,
+				EA516156210C9F5D00632629 /* DAOSearchBar.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA51614F210C9E9700632629 /* DAOSearchBar.swift in Sources */,
+				EA516155210C9F5D00632629 /* DAOBundle.swift in Sources */,
 				1CD20D541FB6E3FA005C7E6F /* ViewController.swift in Sources */,
-				EA51614D210C9E9700632629 /* DAOBundle.swift in Sources */,
+				EA516157210C9F5D00632629 /* DAOSearchBar.swift in Sources */,
 				1CD20D521FB6E3FA005C7E6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,54 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Without delegation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuS-X3-KIE">
-                                <rect key="frame" x="15" y="30" width="345" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="QfA-ke-ebS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With delegation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d62-Du-PTh">
-                                <rect key="frame" x="15" y="105" width="345" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Gev-lA-nJc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKU-bB-tVc">
-                                <rect key="frame" x="15" y="180" width="345" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ruh-sC-jIc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="d62-Du-PTh" firstAttribute="top" secondItem="kuS-X3-KIE" secondAttribute="bottom" constant="54" id="0A5-gW-6bt"/>
-                            <constraint firstItem="ZKU-bB-tVc" firstAttribute="top" secondItem="d62-Du-PTh" secondAttribute="bottom" constant="54" id="Dzs-m7-42U"/>
-                            <constraint firstItem="kuS-X3-KIE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="EuD-q6-BBF"/>
-                            <constraint firstItem="d62-Du-PTh" firstAttribute="trailing" secondItem="kuS-X3-KIE" secondAttribute="trailing" id="HZn-My-pja"/>
-                            <constraint firstItem="ZKU-bB-tVc" firstAttribute="leading" secondItem="kuS-X3-KIE" secondAttribute="leading" id="MgS-F2-D8v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kuS-X3-KIE" secondAttribute="trailing" constant="15" id="PLk-s7-xzg"/>
-                            <constraint firstItem="d62-Du-PTh" firstAttribute="leading" secondItem="kuS-X3-KIE" secondAttribute="leading" id="Psb-4G-DQa"/>
-                            <constraint firstItem="kuS-X3-KIE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="bBm-Ox-atg"/>
-                            <constraint firstItem="ZKU-bB-tVc" firstAttribute="trailing" secondItem="kuS-X3-KIE" secondAttribute="trailing" id="nDi-Y5-dKe"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="label1" destination="kuS-X3-KIE" id="ZGS-Dg-WSF"/>
-                        <outlet property="label2" destination="d62-Du-PTh" id="CzR-Ul-z99"/>
-                        <outlet property="label3" destination="ZKU-bB-tVc" id="CUJ-6m-TqC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

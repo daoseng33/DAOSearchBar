@@ -8,18 +8,68 @@
 
 import UIKit
 
-class ViewController: UIViewController, DAOSearchBarDelegate {
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
+class ViewController: UIViewController {
     
-    let innerSpacing = 10.0
-    let margin = 15.0
-    let searchBarHeight = 34.0
-    let searchBarOriginalWidth = 44.0
-    var searchBarWidth = 0.0
+    var searchBarWithoutDelegate: DAOSearchBar!
+    var searchBarWithDelegate: DAOSearchBar!
+    var searchBarWithCustomColor: DAOSearchBar!
+    
+    let innerSpacing: CGFloat = 10.0
+    let margin: CGFloat = 15.0
+    let searchBarHeight: CGFloat = 34.0
+    let searchBarOriginalWidth: CGFloat = 44.0
+    var searchBarWidth: CGFloat = 0.0
     var searchBarDestinationFrame = CGRect.zero
     
+    // MARK: Setup init values
+    
+    func setupInitValues () {
+        self.view.backgroundColor = UIColor(red: 0.000, green: 0.418, blue: 0.673, alpha: 1.000)
+        searchBarWidth = self.view.bounds.width - (2 * margin)
+    }
+    
+    func setupSearchBars() {
+        let label1 = UILabel(frame: CGRect(x: margin, y: 80, width: searchBarWidth, height: 21))
+        label1.text = "Search bar"
+        view.addSubview(label1)
+        
+        let searchBarWithoutDelegate = DAOSearchBar.init(frame: CGRect(x: margin, y: label1.frame.maxY + innerSpacing, width: searchBarWidth, height: searchBarHeight))
+        self.view.addSubview(searchBarWithoutDelegate)
+        
+        let label2 = UILabel(frame: CGRect(x: margin, y: searchBarWithoutDelegate.frame.maxY + innerSpacing, width: searchBarWidth, height: 21))
+        label2.text = "Search bar with delegate"
+        view.addSubview(label2)
+        
+        let searchBarWithDelegate = DAOSearchBar.init(frame: CGRect(x: margin, y: label2.frame.maxY + innerSpacing, width: searchBarOriginalWidth, height: searchBarHeight))
+        var frame = searchBarWithDelegate.frame
+        frame.size.width = searchBarWidth
+        self.searchBarDestinationFrame = frame
+        searchBarWithDelegate.delegate = self
+        self.view.addSubview(searchBarWithDelegate)
+        
+        let label3 = UILabel(frame: CGRect(x: margin, y: searchBarWithDelegate.frame.maxY + innerSpacing, width: searchBarWidth, height: 21))
+        label3.text = "Search bar with custom color"
+        view.addSubview(label3)
+        
+        let searchBarWithCustomColor = DAOSearchBar.init(frame: CGRect(x: margin, y: label3.frame.maxY + innerSpacing, width: searchBarWidth, height: searchBarHeight))
+        searchBarWithCustomColor.searchOffColor = UIColor.orange
+        searchBarWithCustomColor.searchOnColor = UIColor.white
+        searchBarWithCustomColor.searchBarOffColor = UIColor.white
+        searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
+        self.view.addSubview(searchBarWithCustomColor)
+    }
+    
+    // MARK: Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupInitValues()
+        setupSearchBars()
+    }
+
+}
+
+extension ViewController: DAOSearchBarDelegate {
     // MARK: SearchBar Delegate
     func destinationFrameForSearchBar(_ searchBar: DAOSearchBar) -> CGRect {
         return self.searchBarDestinationFrame
@@ -42,37 +92,4 @@ class ViewController: UIViewController, DAOSearchBarDelegate {
         // Do whatever you deem necessary.
         // Access the text from the search bar like searchBar.searchField.text
     }
-    
-    // MARK: Setup init values
-    
-    func setupInitValues () {
-        self.view.backgroundColor = UIColor(red: 0.000, green: 0.418, blue: 0.673, alpha: 1.000)
-        searchBarWidth = Double(self.view.bounds.width) - (2 * margin)
-    }
-    
-    func setupSearchBars() {
-        let searchBarWithoutDelegate = DAOSearchBar.init(frame: CGRect(x: margin, y: Double(self.label1.frame.maxY) + innerSpacing, width: searchBarWidth, height: searchBarHeight))
-        self.view.addSubview(searchBarWithoutDelegate)
-        
-        let searchBarWithDelegate = DAOSearchBar.init(frame: CGRect(x: margin, y: Double(self.label2.frame.maxY) + innerSpacing, width: searchBarOriginalWidth, height: searchBarHeight))
-        self.searchBarDestinationFrame = CGRect.init(x: margin, y: Double(self.label2.frame.maxY) + innerSpacing, width: searchBarWidth, height: searchBarHeight)
-        searchBarWithDelegate.delegate = self
-        self.view.addSubview(searchBarWithDelegate)
-        
-        let searchBarWithCustomColor = DAOSearchBar.init(frame: CGRect(x: margin, y: Double(self.label3.frame.maxY) + innerSpacing, width: searchBarWidth, height: searchBarHeight))
-        searchBarWithCustomColor.searchOffColor = UIColor.darkGray
-        searchBarWithCustomColor.searchOnColor = UIColor.white
-        searchBarWithCustomColor.searchBarOffColor = UIColor.white
-        searchBarWithCustomColor.searchBarOnColor = UIColor.darkGray
-        self.view.addSubview(searchBarWithCustomColor)
-    }
-    
-    // MARK: Life cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupInitValues()
-        setupSearchBars()
-    }
-
 }
