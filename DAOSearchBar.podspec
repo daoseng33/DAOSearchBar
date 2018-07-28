@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author             = { "daoseng33" => "daoseng33@gmail.com" }
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/daoseng33/DAOSearchBar.git", :tag => "#{s.version}" }
-  s.source_files = "DAOSearchBar", "DAOSearchBarDemo/DAOSearchBar/**/*.{swift}"
+  s.source_files = "DAOSearchBar", "DAOSearchBar/DAOSearchBar/**/*.{swift}"
   s.framework    = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 end
