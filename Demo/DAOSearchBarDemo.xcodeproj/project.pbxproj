@@ -322,10 +322,10 @@
 		1CD20D611FB6E3FA005C7E6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R33X9HN7ET;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DAOSearchBarDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = likeabossapp.com.DAOSearchBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,10 +337,10 @@
 		1CD20D621FB6E3FA005C7E6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R33X9HN7ET;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DAOSearchBarDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = likeabossapp.com.DAOSearchBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
