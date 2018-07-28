@@ -1,5 +1,5 @@
 # DAOSearchBar
-It is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like DAOSearchBar is no longer update anymore.
+INSSearchBar is a 3rd-party search bar with beautiful animation. Unfortunately, it seems like INSSearchBar is no longer update anymore.
 
 So, heres the DAOSearchBar.
 
@@ -7,20 +7,17 @@ So, heres the DAOSearchBar.
 ![withDelegate](https://media.giphy.com/media/NEquunOmZLUv6/giphy.gif)
 ![customColor](https://media.giphy.com/media/EGECl0ncJTUME/giphy.gif)
 
-## What's new in version 1.0.3 ##
-1. Swift 4.0 & iOS 11 supported.
-
 ## Requirement ##
 - iOS 9.0 up
 
-- Swift 3.0 up
+- Swift 3.0 up (Support Swift 4.0)
 
 - XCode 8 up
 
 ## Installation ##
 ### CocoaPods ###
 ```
-pod 'DAOSearchBar', '~> 1.0.4'
+pod 'DAOSearchBar', '~> 1.2.5'
 ```
 ## Usage ##
 ### Search bar without delegate ###
