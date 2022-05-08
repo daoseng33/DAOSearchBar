@@ -221,12 +221,12 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
         self.searchFrame.layer.cornerRadius = self.bounds.height / 2
         self.searchFrame.layer.borderWidth = 1.0
         self.searchFrame.layer.borderColor = UIColor.clear.cgColor
-        self.searchFrame.contentMode = UIViewContentMode.redraw
+        self.searchFrame.contentMode = UIView.ContentMode.redraw
         
         self.addSubview(self.searchFrame)
         
         self.searchField.frame = CGRect(x: kDAOSearchBarInset, y: 3.0, width: self.bounds.width - (2 * kDAOSearchBarInset) - kDAOSearchBarImageSize, height: self.bounds.height - 6.0)
-        self.searchField.borderStyle = UITextBorderStyle.none
+        self.searchField.borderStyle = UITextField.BorderStyle.none
         self.searchField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.searchField.font = UIFont(name:"AvenirNext-Regular", size:16.0)
         self.searchField.textColor = self.searchOnColor
@@ -286,9 +286,9 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
         self.keyboardDismissGestureRecognizer.cancelsTouchesInView = false
         self.keyboardDismissGestureRecognizer.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.textDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DAOSearchBar.textDidChange(_:)), name: UITextField.textDidChangeNotification, object: self.searchField)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -296,9 +296,9 @@ public class DAOSearchBar : UIView, UITextFieldDelegate, UIGestureRecognizerDele
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: self.searchField)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: self.searchField)
     }
     
     // MARK: animation
