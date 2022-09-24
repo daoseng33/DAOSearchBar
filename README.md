@@ -8,16 +8,14 @@ So, heres the DAOSearchBar.
 ![customColor](https://media.giphy.com/media/EGECl0ncJTUME/giphy.gif)
 
 ## Requirement ##
-- iOS 9.0 up
+- iOS 12.0 up
 
-- Swift 3.0 up (Support Swift 4.0)
-
-- XCode 8 up
+- Swift 3.0 up (Support Swift 5.0)
 
 ## Installation ##
 ### CocoaPods ###
 ```
-pod 'DAOSearchBar', '~> 1.2.5'
+pod 'DAOSearchBar', '~> 1.3'
 ```
 ## Usage ##
 ### Search bar without delegate ###
