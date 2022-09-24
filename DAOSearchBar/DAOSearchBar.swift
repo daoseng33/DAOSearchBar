@@ -42,7 +42,7 @@ public enum DAOSearchBarState: Int {
  *  The delegate is responsible for providing values to the search bar that it can use to determine its size.
  */
 
-public protocol DAOSearchBarDelegate: class {
+public protocol DAOSearchBarDelegate: AnyObject {
     /**
      *  The delegate is asked to provide the destination frame for the search bar when the search bar is transitioning to the visible state.
      *

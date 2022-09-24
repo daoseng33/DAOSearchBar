@@ -14,7 +14,7 @@ class DAOBundle {
         let podBundle = Bundle(for: DAOBundle.self)
         if let url = podBundle.url(forResource: "DAOSearchBar", withExtension: "bundle") {
             let bundle = Bundle(url: url)
-            let image = UIImage(named: named, in: bundle, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+            let image = UIImage(named: named, in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
             return image
         }
         return nil
